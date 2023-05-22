@@ -2,13 +2,11 @@ package mybatis.mybatisPractice.model;
 
 import lombok.*;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Builder
+@Data
 public class Member {
-    private Long id;
+    private Long memberId;
     private String username;
     private String nickname;
 }

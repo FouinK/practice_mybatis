@@ -3,8 +3,29 @@
 
 <mapper namespace="mybatis.mybatisPractice.mapper.MemberMapper">
 
-    <select id="insertMember" parameterType="mybatis.mybatisPractice.model.Member">
-        INSERT
+    <insert id="saveMember" parameterType="mybatis.mybatisPractice.model.Member">
+        INSERT INTO Member(memberId, username, nickname)
+        values (#{memberId}, #{username}, #{nickname});
+    </insert>
+
+    <select id="findAll" resultType="mybatis.mybatisPractice.model.Member">
+        select * from Member;
     </select>
 
+    <select id="findById" resultType="mybatis.mybatisPractice.model.Member" parameterType="java.lang.Long">
+        select * from Member where memberId = #{memberId}
+    </select>
+
+    <update id="updateMember" parameterType="mybatis.mybatisPractice.model.Member">
+        update Member
+        set username = #{username},
+            nickname = #{nickname}
+        where memberId = #{memberId};
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from Member
+        where memberId = #{memberId};
+    </delete>
 </mapper>

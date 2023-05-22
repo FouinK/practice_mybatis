@@ -1,5 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mvdb?useSSL=false&&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/mvdb
     username: root
-    password:
+    password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
